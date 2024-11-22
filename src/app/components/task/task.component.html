@@ -1,0 +1,37 @@
+
+
+
+<!-- <li class="{{getItemVariant()}}">
+    
+    HELLO {{name}}
+    
+    <span class="{{getBadgeVariant()}}"> {{getComplete()}}  </span> 
+
+    <button (click)="toggleComplete()"> {{getButtonText()}} </button>
+
+</li>
+
+<input type="text" [(ngModel)]="name"> -->
+
+
+<li>
+    <p>Tâche de : {{ task.title }}</p>
+    <p>Status de la tâche : {{ getComplete() }}</p>
+
+    <p>Tâche : {{ task.title }}
+        <span [class]="getBadgeVariant()">
+            {{ getComplete() }}
+        </span>
+    </p>
+
+    <button mat-flat-button class="btn btn-primary btn-sm float-right" (click)="toggleComplete()">
+        {{ getButtonText() }} </button>
+
+    <input type="text" [(ngModel)]="task.title">
+
+
+    
+    <p>Tâche : {{ task.created | date:'mediumDate'}} </p>
+
+
+</li>

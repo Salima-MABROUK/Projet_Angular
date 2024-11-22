@@ -1,0 +1,33 @@
+
+<ul>
+
+    <h1> Liste des taches menagères </h1>
+    <h5 style="color: rgb(5, 42, 187);">  Nombre de taches effectuées {{compteur}} </h5>
+     
+    <p> Nombre de taches effectués  </p> 
+
+    @for (task of tasks; track task.id) {
+        <app-task
+        [task]="task"
+        (miseAjourComplete)="miseAjourCompteur($event)">
+      </app-task>
+    }
+
+
+    <br>
+
+    @if (completion==0) {
+        <h3 style="color: red;"> Il serait temps de s'y mettre… </h3>
+    } @else if (completion<=50) {
+        <h3 style="color: red;"> “Et c'est parti ! </h3>
+    } @else if (completion<100) {
+        <h3 style="color: red;"> On en voit le bout ! </h3>
+    } @else {
+        <h3 style="color: red;"> Fini ! </h3>
+    }
+
+</ul>
+
+   
+
+    
